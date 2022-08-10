@@ -6,7 +6,7 @@
 xrandr --output <Tab> --same-as <Tab>
 ```
 
-[https://unix.stackexchange.com/questions/371793/how-to-duplicate-desktop-in-linux-with-xrandr](Get more info)
+[Get more info](https://unix.stackexchange.com/questions/371793/how-to-duplicate-desktop-in-linux-with-xrandr)
 
 
 
