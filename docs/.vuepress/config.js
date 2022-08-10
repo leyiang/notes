@@ -34,7 +34,8 @@ const getNetworking = () => {
 
 module.exports = {
     title: "Yiang's Notes",
-    description: "Hllo!!!!!",
+    description: "This site stores all my notes.",
+    base: '/notes/',
     theme: defaultTheme({
         navbar: [
             {
