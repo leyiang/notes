@@ -16,9 +16,9 @@ systemd-resolve --status
 
 You might have `systemd-resolved` service running.
 
-Normally /etc/resolv.conf points to /run/systemd/resolve/stub-resolv.conf
+Normally `/etc/resolv.conf` points to `/run/systemd/resolve/stub-resolv.conf`
 
-remove `resolv.conf` and create a soft link that points to /run/.../resolv.conf.
+remove `resolv.conf` and create a soft link that points to `/run/.../resolv.conf`.
 
 In this way, system will forward every dns query directly to the dns server you specified in side resolve.conf
 
@@ -36,4 +36,4 @@ Inside Chrome, remember to flush dns and close **Secure DNS**; `chrome://net-int
 Try turn off your proxy and try again.
 
 ## Why dnsmasq not working with proxy on?
-Proxy might use it's on configured dns. So you need to check it and change it to your dnsmasq address;
+Proxy might use it's own configured dns. So you need to check it and change it to your dnsmasq address;
