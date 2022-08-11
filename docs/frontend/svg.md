@@ -24,7 +24,7 @@ Solution here is to use `animate` tag to animate on `href`, This only works for 
     <animate
         attributeName="href"
         dur=".3s",
-        values="frames"
+        values="url1;url2;url3;url4"
         begin="indefinite"
     ></animate>
 </image>
