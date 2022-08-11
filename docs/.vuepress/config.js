@@ -6,8 +6,7 @@ const getLinuxSidebar = () => {
         link: "/linux/xrandr",
         children: [
             "/linux/xrandr.md",
-            "/linux/configure.md",
-        ]
+            "/linux/configure.md", ]
     }
 }
 
@@ -31,6 +30,17 @@ const getNetworking = () => {
     }
 }
 
+const getFrontend = () => {
+    return {
+        text: "Frontend",
+        link: "/frontend/svg",
+        children: [
+            "/frontend/svg.md",
+        ]
+    }
+}
+
+
 
 module.exports = {
     title: "Yiang's Notes",
@@ -48,7 +58,8 @@ module.exports = {
             "/": [
                 getLinuxSidebar(),
                 getPhpSidebar(),
-                getNetworking()
+                getNetworking(),
+                getFrontend()
             ],
         }
     })
