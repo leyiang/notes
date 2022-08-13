@@ -6,7 +6,8 @@ const getLinuxSidebar = () => {
         link: "/linux/xrandr",
         children: [
             "/linux/xrandr.md",
-            "/linux/configure.md", ]
+            "/linux/configure.md",
+        ]
     }
 }
 
@@ -16,6 +17,7 @@ const getPhpSidebar = () => {
         link: "/php/datetime",
         children: [
             "/php/datetime.md",
+            "/php/file.md",
         ]
     }
 }
