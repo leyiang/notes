@@ -1,48 +1,40 @@
 const { defaultTheme } = require("vuepress");
 
-const getLinuxSidebar = () => {
-    return {
-        text: "Linux",
-        link: "/linux/xrandr",
-        children: [
-            "/linux/xrandr.md",
-            "/linux/configure.md",
-        ]
+function capitalize(s) {
+    if( s === "php" ) {
+        return "PHP";
     }
+
+    s = s.toString();
+    return s[0].toUpperCase() + s.slice(1);
 }
 
-const getPhpSidebar = () => {
-    return {
-        text: "PHP",
-        link: "/php/datetime",
-        children: [
-            "/php/datetime.md",
-            "/php/file.md",
-        ]
-    }
-}
+const getSidebar = () => {
+    const fs = require("fs");
 
-const getNetworking = () => {
-    return {
-        text: "Networking",
-        link: "/networking/dns",
-        children: [
-            "/networking/dns.md",
-        ]
-    }
-}
+    let list = fs.readdirSync(__dirname + "/../");
 
-const getFrontend = () => {
-    return {
-        text: "Frontend",
-        link: "/frontend/svg",
-        children: [
-            "/frontend/svg.md",
-        ]
-    }
-}
+    list = list.filter(name => {
+        return ! [".vuepress", "README.md"].includes(name);
+    });
+
+    list = list.map(name => {
+        const files = fs.readdirSync(`${__dirname}/../${ name }/`);
+        let first = files[0];
+        first = first.split(".")[0];
 
 
+        return {
+            text: capitalize(name),
+            link: `/${ name }/${ first }`,
+            children: files.map(file => {
+                return `/${name}/${file}`
+            })
+        }
+    });
+
+    return list;
+};
 
 module.exports = {
     title: "Yiang's Notes",
@@ -57,12 +49,7 @@ module.exports = {
         ],
 
         sidebar: {
-            "/": [
-                getLinuxSidebar(),
-                getPhpSidebar(),
-                getNetworking(),
-                getFrontend()
-            ],
+            "/": getSidebar()
         }
     })
 }
