@@ -37,3 +37,7 @@ Try turn off your proxy and try again.
 
 ## Why dnsmasq not working with proxy on?
 Proxy might use it's own configured dns. So you need to check it and change it to your dnsmasq address;
+
+## What dns servers are dnsmasq using? (OpenWrt)
+Checkout `/etc/config/dhcp`
+
